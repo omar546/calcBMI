@@ -42,3 +42,18 @@ flutter run
 ```
 
 Thank you for using calcBMI!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Stockio - Flaticon</a>
