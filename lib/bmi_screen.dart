@@ -75,24 +75,26 @@ class _BmiScreenState extends State<BmiScreen> {
                           color: isMale ? myLightGreyColor : myDarkGreyColor,
                         ),
 
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Transform.scale(scale: 0.8,
-                                child: const Image(image: AssetImage('images/MALE.png'),)),
-                            // const SizedBox(
-                            //   height: 15,
-                            // ),
-                            Text(
-                              'MALE',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: isMale ? myBlackColor : myWhiteColor,
-                              ),
-                            ),
-                          ],
-                        ),
+                        child: Transform.scale(scale: 0.8,
+                            child: const Image(image: AssetImage('images/MALE.png'),)),
+                        // Column(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: [
+                        //     Transform.scale(scale: 0.8,
+                        //         child: const Image(image: AssetImage('images/MALE.png'),)),
+                        //     // const SizedBox(
+                        //     //   height: 15,
+                        //     // ),
+                        //     Text(
+                        //       'MALE',
+                        //       style: TextStyle(
+                        //         fontSize: 25,
+                        //         fontWeight: FontWeight.bold,
+                        //         color: isMale ? myBlackColor : myWhiteColor,
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
                       ),
                     ),
                   ),
@@ -113,24 +115,26 @@ class _BmiScreenState extends State<BmiScreen> {
                           color: isMale ? myDarkGreyColor : myLightGreyColor,
                         ),
 
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Transform.scale(scale: 0.8,
-                                child: const Image(image: AssetImage('images/FEMALE.png'),)),
-                            // const SizedBox(
-                            //   height: 15,
-                            // ),
-                            Text(
-                              'FEMALE',
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: isMale ? myWhiteColor : myBlackColor,
-                              ),
-                            ),
-                          ],
-                        ),
+                        child:Transform.scale(scale: 0.8,
+                            child: const Image(image: AssetImage('images/FEMALE.png'),)),
+                        // Column(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: [
+                        //     Transform.scale(scale: 0.8,
+                        //         child: const Image(image: AssetImage('images/FEMALE.png'),)),
+                        //     // const SizedBox(
+                        //     //   height: 15,
+                        //     // ),
+                        //     Text(
+                        //       'FEMALE',
+                        //       style: TextStyle(
+                        //         fontSize: 25,
+                        //         fontWeight: FontWeight.bold,
+                        //         color: isMale ? myWhiteColor : myBlackColor,
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
                       ),
                     ),
                   ),
