@@ -5,41 +5,64 @@ import 'bmi_res_screen.dart';
 
 class BmiScreen extends StatefulWidget {
   const BmiScreen({Key? key}) : super(key: key);
+
   @override
   State<BmiScreen> createState() => _BmiScreenState();
 }
 
 class _BmiScreenState extends State<BmiScreen> {
+  bool isMale = true;
+  double height = 170.0;
+  int weight = 50;
+  int age = 20;
+  Color myBlackColor = const Color(0xFF070606);
+  Color myWhiteColor = const Color(0xFFFFFDFA);
+  Color myLightGreyColor = const Color(0xFFE0E0E0);
+  Color myDarkGreyColor = const Color(0xFF212121);
+  double bmi = 0.0;
+  Color STATEcolor = Colors.transparent;
+  String status = "";
 
+  double calculateBMI() {
+    if (isMale) {
+      bmi = (weight) / ((height / 100) * (height / 100));
+    } else {
+      bmi = (weight) / ((height / 100) * (height / 100));
+    }
+    return bmi;
+  }
 
+  String calcStatus(double bmi) {
+    if (bmi < 18.5) {
+      status = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 25.0) {
+      status = "Normal Weight";
+    } else if (bmi >= 25.0 && bmi < 30.0) {
+      status = "Overweight";
+    } else {
+      status = "Obesity";
+    }
+    return status;
+  }
 
-   bool isMale = true;
-   double height = 170.0;
-   int weight = 50;
-   int age =20;
-   Color myBlackColor = const Color(0xFF070606);
-   Color myWhiteColor = const Color(0xFFFFFDFA);
-   Color myLightGreyColor = const Color(0xFFE0E0E0);
-   Color myDarkGreyColor = const Color(0xFF212121);
-
-   double calculateBMI() {
-     double bmi;
-
-     if (isMale) {
-       bmi = (66 + (13.75 * weight) + (5 * height) - (6.75 * age)) / 10000;
-     } else {
-       bmi = (655 + (9.56 * weight) + (1.85 * height) - (4.68 * age)) / 10000;
-     }
-
-     return double.parse(bmi.toStringAsFixed(2));
-   }
+  Color calcStatusColor(String status) {
+    if (status == "Underweight") {
+      STATEcolor = Colors.blue;
+    } else if (status == "Normal Weight") {
+      STATEcolor = Colors.greenAccent;
+    } else if (status == "Overweight") {
+      STATEcolor = Colors.orange;
+    } else {
+      STATEcolor = Colors.red;
+    }
+    return STATEcolor;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: myBlackColor,
       appBar: AppBar(
-
         automaticallyImplyLeading: false,
         backgroundColor: myBlackColor,
         elevation: 0.0,
@@ -53,7 +76,6 @@ class _BmiScreenState extends State<BmiScreen> {
             ),
           ),
         ),
-
       ),
       body: Column(
         children: [
@@ -64,37 +86,22 @@ class _BmiScreenState extends State<BmiScreen> {
                 children: [
                   Expanded(
                     child: GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         setState(() {
                           isMale = true;
                         });
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.0,),
+                          borderRadius: BorderRadius.circular(30.0),
                           color: isMale ? myLightGreyColor : myDarkGreyColor,
                         ),
-
-                        child: Transform.scale(scale: 0.8,
-                            child: const Image(image: AssetImage('images/MALE.png'),)),
-                        // Column(
-                        //   mainAxisAlignment: MainAxisAlignment.center,
-                        //   children: [
-                        //     Transform.scale(scale: 0.8,
-                        //         child: const Image(image: AssetImage('images/MALE.png'),)),
-                        //     // const SizedBox(
-                        //     //   height: 15,
-                        //     // ),
-                        //     Text(
-                        //       'MALE',
-                        //       style: TextStyle(
-                        //         fontSize: 25,
-                        //         fontWeight: FontWeight.bold,
-                        //         color: isMale ? myBlackColor : myWhiteColor,
-                        //       ),
-                        //     ),
-                        //   ],
-                        // ),
+                        child: Transform.scale(
+                          scale: 0.8,
+                          child: const Image(
+                            image: AssetImage('images/MALE.png'),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -103,38 +110,22 @@ class _BmiScreenState extends State<BmiScreen> {
                   ),
                   Expanded(
                     child: GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         setState(() {
                           isMale = false;
                         });
                       },
                       child: Container(
-
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.0,),
+                          borderRadius: BorderRadius.circular(30.0),
                           color: isMale ? myDarkGreyColor : myLightGreyColor,
                         ),
-
-                        child:Transform.scale(scale: 0.8,
-                            child: const Image(image: AssetImage('images/FEMALE.png'),)),
-                        // Column(
-                        //   mainAxisAlignment: MainAxisAlignment.center,
-                        //   children: [
-                        //     Transform.scale(scale: 0.8,
-                        //         child: const Image(image: AssetImage('images/FEMALE.png'),)),
-                        //     // const SizedBox(
-                        //     //   height: 15,
-                        //     // ),
-                        //     Text(
-                        //       'FEMALE',
-                        //       style: TextStyle(
-                        //         fontSize: 25,
-                        //         fontWeight: FontWeight.bold,
-                        //         color: isMale ? myWhiteColor : myBlackColor,
-                        //       ),
-                        //     ),
-                        //   ],
-                        // ),
+                        child: Transform.scale(
+                          scale: 0.8,
+                          child: const Image(
+                            image: AssetImage('images/FEMALE.png'),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -144,12 +135,10 @@ class _BmiScreenState extends State<BmiScreen> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20.0
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30.0,),
+                  borderRadius: BorderRadius.circular(30.0),
                   color: myDarkGreyColor,
                 ),
                 child: Column(
@@ -190,16 +179,17 @@ class _BmiScreenState extends State<BmiScreen> {
                       ],
                     ),
                     Slider(
-                        value: height,
-                        max: 220,
-                        min: 80,
-                        activeColor: Colors.deepOrange,
-                        inactiveColor: myBlackColor,
-                        onChanged:(value){
-                          setState(() {
-                            height = value;
-                          });
-                    } ),
+                      value: height,
+                      max: 250,
+                      min: 50,
+                      activeColor: Colors.deepOrange,
+                      inactiveColor: myBlackColor,
+                      onChanged: (value) {
+                        setState(() {
+                          height = value;
+                        });
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -213,7 +203,7 @@ class _BmiScreenState extends State<BmiScreen> {
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30.0,),
+                        borderRadius: BorderRadius.circular(30.0),
                         color: myDarkGreyColor,
                       ),
                       child: Column(
@@ -241,25 +231,25 @@ class _BmiScreenState extends State<BmiScreen> {
                               FloatingActionButton(
                                 heroTag: "age-",
                                 backgroundColor: myLightGreyColor,
-
-                                onPressed: (){
+                                onPressed: () {
                                   setState(() {
-                                    age--;
+                                    if(age>=1){
+                                    age--;}
                                   });
                                 },
                                 mini: true,
                                 child: const Icon(
                                   Icons.remove,
                                   color: CupertinoColors.activeBlue,
-
                                 ),
                               ),
                               FloatingActionButton(
                                 heroTag: "age+",
                                 backgroundColor: myLightGreyColor,
-                                onPressed: (){
+                                onPressed: () {
                                   setState(() {
-                                    age++;
+                                    if(age<=200){
+                                    age++;}
                                   });
                                 },
                                 mini: true,
@@ -274,11 +264,13 @@ class _BmiScreenState extends State<BmiScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 20.0,),
+                  const SizedBox(
+                    width: 20.0,
+                  ),
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30.0,),
+                        borderRadius: BorderRadius.circular(30.0),
                         color: myDarkGreyColor,
                       ),
                       child: Column(
@@ -300,41 +292,43 @@ class _BmiScreenState extends State<BmiScreen> {
                               color: myWhiteColor,
                             ),
                           ),
-                           Row(
-                             mainAxisAlignment: MainAxisAlignment.center,
-                             children: [
-                               FloatingActionButton(
-                                 heroTag: "weight-",
-                                 backgroundColor: myLightGreyColor,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FloatingActionButton(
+                                heroTag: "weight-",
+                                backgroundColor: myLightGreyColor,
+                                onPressed: () {
+                                  setState(() {
+                                    if(weight>=0){
+                                    weight--;}
+                                  });
+                                },
+                                mini: true,
+                                child: const Icon(
+                                  Icons.remove,
+                                  color: CupertinoColors.activeBlue,
+                                ),
+                              ),
+                              FloatingActionButton(
+                                heroTag: "weight+",
+                                backgroundColor: myLightGreyColor,
+                                onPressed: () {
+                                  setState(() {
+                                    if(weight<=300){
 
-                                 onPressed: (){
-                                   setState(() {
-                                     weight--;
-                                   });
-                                 },
-                                 mini: true,
-                               child: const Icon(
-                                 Icons.remove,
-                                 color: CupertinoColors.activeBlue,
 
-                               ),
-                               ),
-                               FloatingActionButton(
-                                 heroTag: "weight+",
-                                 backgroundColor: myLightGreyColor,
-                                 onPressed: (){
-                                   setState(() {
-                                     weight++;
-                                   });
-                                 },
-                                 mini: true,
-                               child: const Icon(
-                                 Icons.add,
-                                 color: Colors.deepOrange,
-                               ),
-                               ),
-                             ],
-                           ),
+                                    weight++;}
+                                  });
+                                },
+                                mini: true,
+                                child: const Icon(
+                                  Icons.add,
+                                  color: Colors.deepOrange,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -347,17 +341,27 @@ class _BmiScreenState extends State<BmiScreen> {
             height: 50,
             width: 200,
             decoration: BoxDecoration(
-            color: Colors.grey[300],
-            borderRadius: BorderRadius.circular(30),
+              color: Colors.grey[300],
+              borderRadius: BorderRadius.circular(30),
             ),
             child: MaterialButton(
-                onPressed: (){
-                  Navigator. push(context, MaterialPageRoute(builder: (context) => BmiResScreen(
-                    result: calculateBMI(),
-                    age: age,
-                    isMale: isMale,
-                  )));
-                },
+              onPressed: () {
+                double bmiResult = calculateBMI();
+                String statusResult = calcStatus(bmiResult);
+                Color colorResult = calcStatusColor(statusResult);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BmiResScreen(
+                      result: bmiResult,
+                      age: age,
+                      isMale: isMale,
+                      status: statusResult,
+                      STATEcolor: colorResult,
+                    ),
+                  ),
+                );
+              },
               height: 50,
               child: const Text(
                 'CALCULATE!',

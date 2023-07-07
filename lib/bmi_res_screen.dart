@@ -5,12 +5,15 @@ class BmiResScreen extends StatelessWidget {
   final double result;
   final bool isMale;
   final int age;
-
+  final String status;
+ final Color STATEcolor;
   BmiResScreen({
     Key? key,
     required this.age,
     required this.result,
     required this.isMale,
+    required this.STATEcolor,
+    required this.status,
   }) : super(key: key);
 
   Color myBlackColor = const Color(0xFF070606);
@@ -20,24 +23,7 @@ class BmiResScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String status = "";
-    Color STATEcolor;
-    if (result < 18.5) {
-      status = "Underweight";
-      STATEcolor = Colors.blue;
-    } else if (result >= 18.5 && result < 25.0) {
-      status = "Normal Weight";
-      STATEcolor = Colors.greenAccent;
 
-    } else if (result >= 25.0 && result < 30.0) {
-      status = "Overweight";
-      STATEcolor = Colors.orange;
-
-    } else {
-      status = "Obesity";
-      STATEcolor = Colors.red;
-
-    }
 
     return Scaffold(
       backgroundColor: myBlackColor,
@@ -119,7 +105,6 @@ class BmiResScreen extends StatelessWidget {
 
               Text(
                 "Status:",
-                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
@@ -130,7 +115,6 @@ class BmiResScreen extends StatelessWidget {
 
               Text(
                 status,
-                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
@@ -142,5 +126,7 @@ class BmiResScreen extends StatelessWidget {
         ),
       ),
     );
+
+
   }
 }

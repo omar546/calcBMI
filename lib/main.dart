@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context)
   {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'laloted',
+      ),
       debugShowCheckedModeBanner: false,
       // home:MessengerScreen(),
       home:BmiScreen(),
