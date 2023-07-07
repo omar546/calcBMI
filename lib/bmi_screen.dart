@@ -78,10 +78,11 @@ class _BmiScreenState extends State<BmiScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Image(image: AssetImage('images/MALE.png'),),
-                            const SizedBox(
-                              height: 15,
-                            ),
+                            Transform.scale(scale: 0.8,
+                                child: const Image(image: AssetImage('images/MALE.png'),)),
+                            // const SizedBox(
+                            //   height: 15,
+                            // ),
                             Text(
                               'MALE',
                               style: TextStyle(
@@ -115,10 +116,11 @@ class _BmiScreenState extends State<BmiScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Image(image: AssetImage('images/FEMALE.png'),),
-                            const SizedBox(
-                              height: 15,
-                            ),
+                            Transform.scale(scale: 0.8,
+                                child: const Image(image: AssetImage('images/FEMALE.png'),)),
+                            // const SizedBox(
+                            //   height: 15,
+                            // ),
                             Text(
                               'FEMALE',
                               style: TextStyle(
