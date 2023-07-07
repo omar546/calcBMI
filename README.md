@@ -52,7 +52,7 @@ flutter run
 ```
 #Or
 
-you can try it by downloading it directly from <a href="https://download1521.mediafire.com/z53sun10ixsgkUgY722U8HeOpS1Rsa6Hp1HOnHebU741ru50vFMMySX3ktd7frsv6BKApXCzWzUpb6LYEu4JogAd8ZlVOeBV9Ew6wkOiuaQcBvipKRttlN--DFYbb2syssjRT2UIG9-j4PA_X6IdyzuP-VNV9lufecAb7ZIciEXyIw/oha9lpy5i8ggjyg/calc_bmi.apk">HERE</a>
+you can try it by downloading it directly from <a href="https://download856.mediafire.com/ansq4mw37zzgVHa6TU8m97kt6MwWLWkhuScq04yD2wQswoHVXDtqnmC3BQ8glD6BVd5pOaO0k6_y88-oFT74YlRtKkxPngCVCeQGM38ra64ePOd5enhpf8GWSBuLdKZGF8w_yHNsVVAbD3jrK_lOA_vw28KzonF38ri30nfzuSH9eg/90cdbk0wytg6rc4/Bmi.apk">HERE</a>
 
 
 <br>
