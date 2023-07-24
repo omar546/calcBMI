@@ -52,7 +52,7 @@ flutter run
 ```
 #Or
 
-you can try it by downloading it directly from <a href="https://download856.mediafire.com/ansq4mw37zzgVHa6TU8m97kt6MwWLWkhuScq04yD2wQswoHVXDtqnmC3BQ8glD6BVd5pOaO0k6_y88-oFT74YlRtKkxPngCVCeQGM38ra64ePOd5enhpf8GWSBuLdKZGF8w_yHNsVVAbD3jrK_lOA_vw28KzonF38ri30nfzuSH9eg/90cdbk0wytg6rc4/Bmi.apk">HERE</a>
+you can try it by downloading it directly from <a href="https://download1532.mediafire.com/k30m8te79wugmxpOEUPiF6pvjL0HNqqhbqh49N6jqMeHe4p8XhIT92KB9OWTzaWzpuY4-wP4ULTkCdlGkMBs4_kYxWtGGZisqA5tLMU1Ln_WVzoM7sQTVN2JpLN9xYyywdsC0FmSvH_t3ZoPeuj9N6phlJmBcKFAS7-LnJvtYZz_hg/90cdbk0wytg6rc4/Bmi.apk">HERE</a>
 
 
 <br>
