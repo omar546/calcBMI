@@ -13,15 +13,7 @@ calcBMI is a simple Flutter application that allows users to calculate their Bod
 ## Screenshots
 <br>
 
-![Screenshot_20230707_092305](https://github.com/omar546/calcBMI/assets/71936776/1a718acd-d675-4021-9f6f-1d7adee42ae6)
-
-
-
-<br>
-
-
-![Screenshot_20230707_092316](https://github.com/omar546/calcBMI/assets/71936776/33b543e8-2b72-4f04-bd2a-73fc1d3470a0)
-
+![Untitled design](https://github.com/omar546/calcBMI/assets/71936776/01089f9c-0a04-44da-951e-38525ffa36b4)
 
 
 
