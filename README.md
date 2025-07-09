@@ -1,6 +1,6 @@
 # calcBMI - BMI Calculator
 
-calcBMI is a simple Flutter application that allows users to calculate their Body Mass Index (BMI). It provides a user-friendly interface where users can input their height and weight, and the app calculates and displays their BMI along with corresponding health status.
+calcBMI is a simple Flutter application that allows users to calculate their Body Mass Index (BMI). It provides a user-friendly interface where users can input their height and weight, and the app calculates and displays their BMI along with the corresponding health status.
 
 ## Features
 
@@ -44,7 +44,7 @@ flutter run
 ```
 #Or
 
-you can try it by downloading it directly from <a href="https://download938.mediafire.com/vd3lbagzxi8gLp6OXTN3TQmwuRJ9vPDqbvD7GwVj0tYqwz4CFJuCF-kIVl2096mAtzPreF4zNJwqceq8hJzPQ9GpGp7Fi0t1ELHyO01vaReyShnhSQYGap9OA2rYfoIJZ3Dgl_6N34NeT4__UP0Hm_TTaiIhM_GrGRlP-oEXnldz6A/cxemet046z3avah/BMI%282%29.apk">HERE</a>
+you can try it by downloading it directly from the releases
 
 
 <br>
